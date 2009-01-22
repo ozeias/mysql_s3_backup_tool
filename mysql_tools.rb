@@ -33,7 +33,7 @@ class MysqlTools
     dump_result = "#{dump_path}.result"
     mysql_user = @config['mysql_user']
     mysql_password_clause = @config['mysql_password'] ? "-p#{@config['mysql_password']}" : ""
-    `mysqldump5 -v --quick --single-transaction -u #{mysql_user} #{mysql_password_clause} #{@database} > #{dump_path} 2> #{dump_result}`
+    `mysqldump -v --quick --single-transaction -u #{mysql_user} #{mysql_password_clause} #{@database} > #{dump_path} 2> #{dump_result}`
     puts "dump_result: #{File.read(dump_result)}" if DEBUG
     
     puts "Compressing..."
