@@ -1,3 +1,3 @@
 #!/bin/bash
-ruby /etc/mysql_backup/mysql_backup.rb backup > /dev/null
+ruby /etc/mysql_backup/mysql_backup.rb backup my_database > /dev/null
 exit 0

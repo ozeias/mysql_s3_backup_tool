@@ -1,8 +1,8 @@
 mysql_tools.rb
-  - Uses config file ./settings.yml
+  - Uses config file ./config/settings.yml
   
 USAGE:
-mysql_tools.rb backup
+mysql_tools.rb backup [database]
   - does a mysqldump on localhost, gzips it and stores to S3 in the configured bucket/folder
 
 mysql_tools.rb restore [filename]
