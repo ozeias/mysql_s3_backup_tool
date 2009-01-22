@@ -114,7 +114,8 @@ class MysqlTools
     end
 
     def load_config
-      @config = YAML.load_file("config/settings.yml")
+      config_file = File.join(File.dirname(__FILE__), "config/settings.yml")
+      @config = YAML.load_file(config_file)
       %w(bucket folder email smtp_server AWS_ACCESS_KEY_ID AWS_SECRET_ACCESS_KEY hostname mysql_user).each do |setting|
         raise "'#{setting}' is required and missing from the config" if not @config[setting]
       end
